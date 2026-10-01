@@ -34,6 +34,7 @@ function help() {
   console.log('微信小程序操作入口');
   console.log('='.repeat(60));
   console.log('  node msci.js status');
+  console.log('  node msci.js doctor                 配置自检（能否真跑起来）');
   console.log('  node msci.js upide  <版本> [备注]   上传（IDE 通道，上传者=你）★推荐');
   console.log('  node msci.js upload <版本> [备注]   上传（CI 通道，上传者=ci机器人N）');
   console.log('  node msci.js preview [输出] [备注]  预览二维码');
@@ -143,6 +144,11 @@ switch (cmd) {
 
   case 'status':
     process.exit(status());
+
+  /* 配置自检（校验配置能不能真跑起来）。
+   * 与 status 的分工：status 只**打印**配置；doctor **判定**配置是否可用。 */
+  case 'doctor':
+    process.exit(run('ms_doctor.js', rest));
 
   case 'upide': case 'upload-ide':
     if (!rest[0]) { console.error('用法：node msci.js upide <版本> [备注]'); process.exit(2); }
