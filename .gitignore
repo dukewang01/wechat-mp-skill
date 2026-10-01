@@ -1,0 +1,19 @@
+# ⚠️ 绝不提交这些（含凭证或大体积目录）
+config.js
+node_modules/
+out/
+*.key
+private.*.key
+.env
+.env.*
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 日志与临时
+*.log
+*.tmp
