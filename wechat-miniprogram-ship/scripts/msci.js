@@ -42,6 +42,7 @@ function help() {
   console.log('  node msci.js whichip                查白名单该填的 IP');
   console.log('  node msci.js ide:<tool> [参数...]   透传官方工具');
   console.log('  node msci.js shots [输出目录]       批量截图');
+  console.log('  node msci.js release-check          发布前自检（对照最后上传）');
   console.log('  node msci.js help');
   console.log('');
   console.log('首次使用：cp config.example.js config.js 并填写。');
@@ -167,6 +168,9 @@ switch (cmd) {
 
   case 'shots':
     process.exit(run('ms_shots.js', rest));
+
+  case 'release-check': case 'rc':
+    process.exit(run('ms_release_check.js', rest));
 
   default:
     if (cmd.indexOf('ide:') === 0) {
