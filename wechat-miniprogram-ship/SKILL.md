@@ -118,7 +118,6 @@ description: Use when 开发/发布/迭代微信小程序，或排查上传失�
 ## 参考
 
 - [references/ci-and-cloud.md](references/ci-and-cloud.md) —— **账号开通、代码上传密钥、IP 白名单、双通道设置**、云函数部署/调用
-- [references/ci-and-cloud.md](references/ci-and-cloud.md) —— 双通道 + 云函数部署/调用
 - [references/submit-review.md](references/submit-review.md) —— 提审、测试账号、被驳对策
 - [references/privacy-and-categories.md](references/privacy-and-categories.md) —— 隐私指引、服务类目、备案
 - [references/pitfalls.md](references/pitfalls.md) —— 踩坑总表（按阶段）
