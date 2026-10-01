@@ -102,7 +102,8 @@ description: Use when 开发/发布/迭代微信小程序，或排查上传失�
 | 用体积没变证明代码没变 | 同长度内容替换体积不变 |
 | 等备案下来才提审 | 白等 1–20 工作日；可并行 |
 | 审核通过就以为上线了 | 还要手动点发布 + 备案 |
-| 在生成脚本之外手改生成物 | 下次跑生成器就回退 |
+| 在生成脚本之外手改生成物 | 下次跑生成器就**静默回退**；见 [pitfalls 1.3](references/pitfalls.md) |
+| 在等发布期间动代码 | 发布旧代码（不生效）或发布未审代码（违规） |
 
 ## 工具能力边界
 
@@ -122,7 +123,11 @@ description: Use when 开发/发布/迭代微信小程序，或排查上传失�
 - [references/privacy-and-categories.md](references/privacy-and-categories.md) —— 隐私指引、服务类目、备案
 - [references/pitfalls.md](references/pitfalls.md) —— 踩坑总表（按阶段）
 - [scripts/](scripts/) —— 可直接运行的脚本（参数化，需自填 config.js）
-  - 先跑 `node scripts/ms_doctor.js` **自检配置**（key 文件、工程路径、app.json、版本号一致性），再执行上传/发版
+
+**用脚本前的顺序**：
+1. 先跑 `node scripts/ms_doctor.js` **自检配置**（key 文件、工程路径、app.json、版本号一致性）
+2. 再 `msci.js` 上传 / 部署云函数
+3. 发布前跑 `node scripts/ms_release_check.js` —— 确认待发布的就是**通过审核的那个版本**
 
 ## 免责
 

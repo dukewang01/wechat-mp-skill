@@ -41,6 +41,7 @@ node msci.js upload 1.0.0 "迭代"     # 上传（CI 通道，headless）
 node msci.js fn my-function         # 部署云函数
 node msci.js call my-function --file args.json   # 真实调用云函数（验证用）
 node msci.js whichip                # 查白名单该填哪个 IP
+node msci.js release-check          # 发布前自检（对照最后上传，防"发布未审代码"）
 ```
 
 ## 内容清单
@@ -52,7 +53,7 @@ node msci.js whichip                # 查白名单该填哪个 IP
 | `references/ci-and-cloud.md` | 双通道上传对照、云函数部署与**真实调用**验证法 |
 | `references/submit-review.md` | 提审字段、测试账号、被驳对策表 |
 | `references/privacy-and-categories.md` | 隐私指引、服务类目、ICP 备案 |
-| `scripts/` | 统一入口 + 8 个参数化脚本 |
+| `scripts/` | 统一入口 `msci.js` + 10 个脚本：配置自检 `ms_doctor.js`、上传、预览、云函数、发布前自检 `ms_release_check.js`、截图 |
 
 ## 三条最重要的结论
 
